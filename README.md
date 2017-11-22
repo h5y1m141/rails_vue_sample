@@ -1,0 +1,2 @@
+# rails_vue_sample
+Rails4ベースでカジュアルにVue.jsを利用するサンプルアプリ
