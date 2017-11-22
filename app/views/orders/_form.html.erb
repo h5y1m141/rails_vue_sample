@@ -1,0 +1,19 @@
+<h3>商品詳細</h3>
+<%= form_for(@order) do |f| %>
+  <%= f.hidden_field :user_id, value: User.first.id %>
+  <div class="field">
+    <%= f.fields_for :order_details, @order_detail do |order_detail| %>
+      <div>
+        <%= order_detail.label '商品' %>
+        <%= order_detail.select :product_id, @products, include_blank: true %>
+      </div>
+      <div>
+        <%= order_detail.label '個数' %><br>
+        <%= order_detail.number_field :quantity %>
+      </div>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit '申込む' %>
+  </div>
+<% end %>

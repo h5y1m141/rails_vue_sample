@@ -1,0 +1,6 @@
+user = User.create(first_name: 'たろう', last_name: 'やまだ')
+iphone = Product.create({ title: 'iPhone', price: 50000 })
+ipad = Product.create({ title: 'iPad', price: 100000 })
+order = Order.create(user: user)
+order_detail1 = OrderDetail.create(order: order, product: ipad, quantity: 2)
+order_detail2 = OrderDetail.create(order: order, product: iphone, quantity: 3)

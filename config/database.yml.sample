@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: rails_vue_sample_development1
+test:
+  <<: *default
+  database: rails_vue_sample_test
+production:
+  <<: *default
+  database: rails_vue_sample_production
+  username: rails_vue_sample
+  password: <%= ENV['RAILS_VUE_SAMPLE_DATABASE_PASSWORD'] %>
